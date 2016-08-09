@@ -1,0 +1,4 @@
+# huc compile files
+*.s
+*.sym
+*.lst

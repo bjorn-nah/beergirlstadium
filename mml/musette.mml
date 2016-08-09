@@ -1,0 +1,38 @@
+;----------------------------------------------------------------------------------------------------------
+; Nope. By Bjorn
+; Made following GNOP music.  by Andrew 'Arkhan' Darovich
+;----------------------------------------------------------------------------------------------------------
+
+.TRACK 0 NOPE
+
+.CHANNEL 0 setup
+T80 V31 L8 ^D0 
+
+bass1= L4 aaaa gggg ffff dddd'
+
+head1= L16 ee r e dd r d ff r f aa r a'
+;head1= L16 eererrrr ddrdrrrr ffrfrrrr aararrrr'
+
+void= L4 rrrr'
+
+;drum1=L8 @M0 O4 ^SC127 ^ST255 @M0cR @M1c#R @M0c8c8 @M1c#R'
+drum1=L8 @M0 O4 ^SC127 ^ST255 @M0c r @M0c r @M0c8c8c8 r @M0c8c8c8c8 r @M0c8c8 r
+drum2_1=L4 @M0 O4 ^SC127 ^ST255 r @M1c# r @M1c# r @M1c#  r @M1c#
+drum2_2=L8 @M0 O4 ^SC127 ^ST255 rr @M1c# @M1c# rr @M1c# r rr @M1c# @M1c# rr @M1c# r
+
+;.CHANNEL 1 TheBass
+;O1 P14,14 @0 @E00
+;(bass1)/TheBass/
+
+;.CHANNEL 2 head
+;O4 P11,15 @5 @E07 
+;[[8(void)][8(head1)]]/head/
+
+.CHANNEL 5 DRUM1
+O5 P15,15 @M0 L16 
+[2(drum1)][2(drum1)]/DRUM1/
+
+.CHANNEL 6 DRUM2
+O5 P15,15 @M0 L16 
+[2(void)][2(drum2_1)][2(drum2_2)]/DRUM2/
+.include "mml/musettefx.mml
